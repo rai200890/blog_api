@@ -1,0 +1,21 @@
+version: '3'
+services:
+  app:
+    build:
+      args:
+        MIX_ENV: test
+    command: iex -S mix phx.server
+    environment:
+      - MIX_ENV=test
+      - HTTP_PORT=3000
+      - DATABASE_USER=user
+      - DATABASE_PASSWORD=pass
+      - DATABASE_PORT=5432
+      - DATABASE_HOST=db
+      - DATABASE_NAME=blog_test
+      - DATABASE_POOL_SIZE=5
+  db:
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=pass
+      - POSTGRES_DB=blog_test
