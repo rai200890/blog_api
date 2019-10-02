@@ -12,7 +12,7 @@ config :blog, Blog.Repo,
 # watchers to your application. For example, we use it
 # with webpack to recompile .js and .css sources.
 config :blog, BlogWeb.Endpoint,
-  http: [port: System.get_env("HTTP_PORT") |> String.to_integer()],
+  http: [port: (System.get_env("HTTP_PORT") || "3000") |> String.to_integer()],
   debug_errors: true,
   code_reloader: true,
   check_origin: false,
