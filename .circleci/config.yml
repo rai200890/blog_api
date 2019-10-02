@@ -28,6 +28,7 @@ jobs:
       - run : mix do local.hex --force, local.rebar --force
       - run: mix deps.get
       - run: mix ecto.create
+      - run: mix credo --strict
       - run: mix coveralls.html
 
 
