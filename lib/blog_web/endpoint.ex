@@ -40,5 +40,6 @@ defmodule BlogWeb.Endpoint do
     key: "_blog_key",
     signing_salt: "q3mGejgo"
 
+  plug CORSPlug
   plug BlogWeb.Router
 end
